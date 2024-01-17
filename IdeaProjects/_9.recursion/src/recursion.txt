@@ -1,0 +1,7 @@
+        IMPORTANT POINTS
+- recursion= a function that can call itself
+- while the function is not finished executing it will remain in stack memory
+- when the function finishes executing it is removed from the stack and the flow of program restores back to where it was called
+- in order to stop the function we require a base condition, without it, we will end up in stack overflow error
+- any complex problem can first be solved using recursion then can be optimized by iterations
+- space complexity not constant
