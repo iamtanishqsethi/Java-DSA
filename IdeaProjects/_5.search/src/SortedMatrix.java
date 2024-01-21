@@ -3,8 +3,9 @@ import java.util.Arrays;
 public class SortedMatrix {
     public static void main(String[] args) {
         int[][] arr={
-                {1,2,3},{4,5,6},{7,8,9}
-        };
+                {1,2,3},
+                {4,5,6},
+                {7,8,9}};
         System.out.println(Arrays.toString(search(arr,1)));
     }
     public static int[] search(int[][] matrix,int target){
@@ -37,7 +38,7 @@ public class SortedMatrix {
                 rend=mid;
             }
         }
-        
+
         //now we have 2 rows
         //check whether the target is in col of 2 rows
         if(matrix[rstart][cmid]==target){
