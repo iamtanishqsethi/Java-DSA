@@ -29,7 +29,7 @@ public class FirstAndLastIndex {
 
     public static void main(String[] args) {
         int [] arr ={5,7,7,7,7,8,8,10};
-        int target = 4;
+        int target = 7;
         System.out.println(Arrays.toString(searchrange(arr,target) ));
     }
 
