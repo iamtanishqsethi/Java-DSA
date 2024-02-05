@@ -21,6 +21,7 @@ public class SelectionSort_Recursion {
             }
 
         }else{
+            //swapping with last element  
             int temp = arr[max];
             arr[max]=arr[row-1];
             arr[row-1]=temp;

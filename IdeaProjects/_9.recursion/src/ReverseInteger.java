@@ -20,7 +20,7 @@ public class ReverseInteger {
 
     }
     private static int helper (int n ,int digits){
-        if(n%10==1){
+        if(n==0){
             return n;
         }
         int rem =n%10;
