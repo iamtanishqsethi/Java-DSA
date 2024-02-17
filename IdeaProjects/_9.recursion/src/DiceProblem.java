@@ -2,6 +2,7 @@ import java.util.ArrayList;
 
 public class DiceProblem {
     public static void main(String[] args) {
+        dice("",4);
         System.out.println(diceret("",4));
     }
     static void dice(String proc, int target){
