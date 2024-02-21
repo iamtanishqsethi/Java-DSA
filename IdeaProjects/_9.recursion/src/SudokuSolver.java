@@ -23,13 +23,14 @@ public class SudokuSolver {
         int row = -1;
         int col = -1;
         boolean emptyLeft = true;
-        //this is how we are replacing the r,c from arguments
+
+        //This is how we are replacing the r,c from arguments
         for(int i = 0;i<n;i++){
             for(int j=0;j<n;j++){
-                if(board[i][j]==0){
+                if(board[i][j]==0){//found empty item , nothing placed yet
                     row= i ;
-                    col=j;
-                    emptyLeft=false;
+                    col= j;
+                    emptyLeft=false;//marking the cell
                     break;
                 }
             }
@@ -38,23 +39,27 @@ public class SudokuSolver {
                 break;
             }
         }
+        //if no empty element left
         if(emptyLeft==true){
             return true;
             //sudoku solved
         }
-        //backtrack
+        //put the answer and back track
         for(int number = 1;number<=9;number++){
             if(isSafe(board,row,col,number)){
                 board[row][col]=number;
+                //checking if we can solve this
                 if(solve(board)){
                     return true;
                     //found answer
                 }
                 else{
+                    //back track
                     board[row][col]=0;
                 }
             }
         }
+        //if nothing works out , sudoku cannot be solved
         return false;
     }
     static void display(int[][] board){
@@ -69,19 +74,21 @@ public class SudokuSolver {
     static boolean isSafe(int[][] board ,int row,int col,int num){
         //checking the row
         for(int i=0;i<board.length;i++){
-            //if the number is already in the row or not
+            //if the number is already in the row,we cannot place it
             if(board[row][i]==num){
                 return false;
             }
         }
         //checking in the col
         for(int[] nums:board){
-            //if num already in column or not
+            //if the num is already in column , we cannot place it
             if(nums[col]==num){
                 return false;
             }
         }
-        //checking in the particular square
+        //checking in the 3x3 square(for 9x9 sudoku),
+        // if the num is already placed or not
+
         int sqrt = (int)(Math.sqrt(board.length));
         int rowStart = row-row%sqrt;
         int colStart = col-col%sqrt;
@@ -93,6 +100,7 @@ public class SudokuSolver {
                 }
             }
         }
+        // if everything ok , we can place that number at the particular cell
         return true;
     }
 }

@@ -1,10 +1,15 @@
 public class N_Queens {
+    /*
+    * we have a N*N chess board, we have to place N queens on the board,
+    * such that they do not eliminate each other
+    */
     public static void main(String[] args) {
         int n =4;
         boolean[][] board = new boolean[n][n];
         System.out.println(queens(board,0));
 ;    }
     static int queens(boolean[][] board,int row){
+        //base case, if row reaches the end
         if(row==board.length){
             display(board);
             System.out.println();
@@ -17,6 +22,7 @@ public class N_Queens {
             if(isSafe(board,row,col)){
                 board[row][col]=true;
                 count+=queens(board,row+1);
+                //backtrack
                 board[row][col]=false;
             }
         }
@@ -28,14 +34,14 @@ public class N_Queens {
                 if(element){
                     System.out.print("Q ");
                 }else{
-                    System.out.print("X ");
+                    System.out.print("x ");
                 }
             }
             System.out.println();
         }
     }
     static boolean isSafe(boolean[][] board,int row,int col){
-        //vertical row
+        //checking the col from 0 to row
         for(int i =0;i<row;i++){
             if(board[i][col]){
                 return false;
@@ -55,6 +61,7 @@ public class N_Queens {
                 return false;
             }
         }
+        //if everything ok return true
         return true;
     }
 }
