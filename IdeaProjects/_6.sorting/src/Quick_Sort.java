@@ -1,5 +1,9 @@
 import java.util.Arrays;
-
+/*
+ in quick sort we will take a pivot (here middle element of the  array),
+ and will sort around it ; smaller elements than pivot on left , greater elements on right
+ we will only sort the elements that are not already sorted.
+ after first call we will sort the left and right half around the pivot using recursion */
 public class Quick_Sort {
     public static void main(String[] args) {
         int[] arr = {5,4,3,2,1};

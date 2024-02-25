@@ -4,7 +4,7 @@ public class Merge_Sort {
     public static void main(String[] args) {
         int[] arr  = {5,4,3,2,1};
         //arr= mergesort(arr);
-        mergesortInPlace(arr,0, arr.length);
+        mergesortInPlace(arr,0, arr.length-1);
         System.out.println(Arrays.toString(mergesort(arr)));
     }
     static int[] mergesort(int[] arr){
@@ -51,13 +51,13 @@ public class Merge_Sort {
 
 
     static void mergesortInPlace(int[] arr, int start, int end ){
-        if(end-start==1){
+        if(end+1-start==1){
             return;
         }
         int mid = (start+end)/2;
 
         mergesortInPlace(arr,start,mid);
-        mergesortInPlace(arr,mid,end);
+        mergesortInPlace(arr,mid+1,end);
         mergeInPlace(arr,start,mid,end);
     }
     static void mergeInPlace(int[] arr,int start, int mid, int end){
