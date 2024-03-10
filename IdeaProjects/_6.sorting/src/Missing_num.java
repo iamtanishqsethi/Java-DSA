@@ -1,4 +1,3 @@
-
 public class Missing_num {
     public static void main(String[] args) {
         int[] arr = {3,0,1};

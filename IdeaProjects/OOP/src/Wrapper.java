@@ -1,4 +1,17 @@
 import java.rmi.StubNotFoundException;
+class A {
+    final int num = 10;//initialization is important
+    String name;
+    public A(String name){
+        this.name = name;
+    }
+
+    @Override
+    protected void finalize() throws Throwable {
+        System.out.println("Object is destroyed");
+    }
+}
+
 
 public class Wrapper {
     public static void main(String[] args) {
@@ -54,17 +67,5 @@ public class Wrapper {
         b = temp;
 //        System.out.println("a="+a);
 //        System.out.println("b="+b);
-    }
-}
-class A {
-    final int num = 10;//initialization is important
-    String name;
-    public A(String name){
-        this.name = name;
-    }
-
-    @Override
-    protected void finalize() throws Throwable {
-        System.out.println("Object is destroyed");
     }
 }
