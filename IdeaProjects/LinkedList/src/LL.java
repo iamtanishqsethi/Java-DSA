@@ -44,6 +44,19 @@ public class LL {//custom linked list
         temp.next =node;//breaking the previous link
         size++;
     }
+    //Insert using recursion
+    public void insertRec(int value,int index){
+        head=insertRec(value,index,head);
+    }
+    private Node insertRec(int value ,int index , Node node){
+        if(index==0){
+            Node temp = new Node(value,node);
+            size++;
+            return temp;
+        }
+        node.next=insertRec(value,index--,node.next);
+        return node;
+    }
     public void display(){
         Node temp = head;//using temp node to traverse
         while(temp!=null){
@@ -103,6 +116,31 @@ public class LL {//custom linked list
         }
         return node;
         //O(n) complexity
+    }
+    //merge linked list
+    public static LL merge(LL first , LL second){
+        Node f=first.head;
+        Node s=second.head;
+        LL ans= new LL();
+        while(f!=null && s!=null){
+            if(f.value<s.value){
+                ans.insertLast(f.value);
+                f=f.next;
+            }
+            else{
+                ans.insertLast(s.value);
+                s=s.next;
+            }
+        }
+        while(f!=null){
+            ans.insertLast(f.value);
+            f=f.next;
+        }
+        while(s!=null){
+            ans.insertLast(s.value);
+            s=s.next;
+        }
+        return ans;
     }
 
     private class Node {
