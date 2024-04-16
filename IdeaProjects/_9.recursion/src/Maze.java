@@ -17,7 +17,9 @@ public class Maze {
 //         AllPaths("",board,0,0);
            AllPathsPrint("",board,0,0,path,1);
     }
-
+    /*to get no of paths , we move down and right ,
+    * if we reach at the end of the row or col we only have one way to go from there either right or down respectively
+    * so at this ste we return 1 as there is only one way to reach to target*/
     static int pathcount(int row,int col){//to find the number of paths taken to reach end point
         if(row==1||col==1){
             return 1;

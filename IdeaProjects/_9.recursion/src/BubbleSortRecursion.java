@@ -1,7 +1,7 @@
 import java.util.Arrays;
 //Bubble sort using recursion
 
-public class BubbleSort_Recursion {
+public class BubbleSortRecursion {
     public static void main(String[] args) {
         int[] arr ={4,3,2,1};
         sort(arr,arr.length-1,0);
