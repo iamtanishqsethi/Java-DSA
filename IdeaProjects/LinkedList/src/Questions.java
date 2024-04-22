@@ -101,6 +101,103 @@ public class Questions {
         }
         return slow;
     }
+    // https://leetcode.com/problems/reverse-linked-list/submissions/
+    public ListNode reverseList(ListNode head) {
+        if (head == null) {
+            return head;
+        }
+        ListNode prev = null;
+        ListNode present = head;
+        ListNode next = present.next;
+
+        while (present != null) {
+            present.next = prev;
+            prev = present;
+            present = next;
+            if (next != null) {
+                next = next.next;
+            }
+        }
+        head = prev;
+        return head;
+    }
+    //https://leetcode.com/problems/reverse-linked-list-ii/
+    public ListNode reverseBetween(ListNode head, int left, int right) {
+        if(left==right){
+            return head;
+        }
+        //skipping the first left -1 nodes
+        ListNode current = head;
+        ListNode previous = null;
+        for(int i=0;current!=null && i< left-1;i++){
+            previous=current;
+            current=current.next;
+        }
+        ListNode last = previous;
+        ListNode newEnd=current;
+        //reversing between left and right
+        ListNode next = current.next;
+        for (int i = 0; current!=null && i < right-left+1; i++) {
+            current.next=previous;
+            previous=current;
+            current=next;
+            if(next!=null){
+                next=next.next;
+            }
+        }
+        if(last!=null){
+            last.next=previous;
+        }else{
+            head=previous;
+        }
+        newEnd.next=current;
+        return head;
+    }
+    // https://leetcode.com/problems/palindrome-linked-list/
+    public boolean isPalindrome(ListNode head) {
+        ListNode mid = middleNode(head);
+        //reversing second half
+        ListNode headSecond = reverseList(mid);
+        ListNode reReverseHead = headSecond;
+        //comparing both halves
+        while(head!=null&&headSecond!=null){
+            if(head.val!= headSecond.val){
+                break;//not palindrome
+            }
+            head=head.next;
+            headSecond=headSecond.next;
+        }
+
+        //in the end re reverse the reversed part
+        reverseList(reReverseHead);
+        if(head==null || headSecond==null){
+            return true;
+        }return false;
+    }
+    //https://leetcode.com/problems/reorder-list/
+    public void reorderList(ListNode head) {
+        if(head==null || head.next==null){
+            return;
+        }
+        ListNode mid = middleNode(head);
+        ListNode headFirst = head;
+        ListNode headSecond = reverseList(mid);
+        //rearranging
+        while(headFirst!=null && headSecond!=null){
+            //for first half
+            ListNode temp=headFirst.next;
+            headFirst.next=headSecond;
+            headFirst=temp;
+            //for second half
+            temp=headSecond.next;
+            headSecond.next=headFirst;
+            headSecond=temp;
+        }
+        //setting next of tail to null
+        if(headFirst!=null){
+            headFirst.next=null;
+        }
+    }
 }
 class ListNode {
       int val;

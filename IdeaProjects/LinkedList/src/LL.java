@@ -142,6 +142,72 @@ public class LL {//custom linked list
         }
         return ans;
     }
+    //sorting linked list (bubble sort)
+    public void bubbleSort(){
+        bubbleSort(size-1,0);
+    }
+    private void bubbleSort(int row,int col){
+        if (row==0){
+            return;
+        }
+        if(col<row){
+            Node first = get(col);
+            Node second = get(col+1);
+            if(first.value>second.value){
+                //swap
+                if(first==head){//case 1
+                    head=second;
+                    first.next=second.next;
+                    second.next=first;
+                } else if (second==tail) {//case 2
+                    Node prev = get(col-1);
+                    prev.next=second;
+                    tail=first;
+                    first.next=null;
+                    second.next=first;
+                }
+                else{//case 3
+                    Node prev = get(col-1);
+                    prev.next=second;
+                    first.next=second.next;
+                    second.next=first;
+                }
+            }bubbleSort(row,col+1);
+        }else bubbleSort(row-1,0);
+    }
+    //reversing linked list using recursion
+    private void reverse(Node node){
+        if(node==tail){
+            head=tail;
+            return;
+        }
+        reverse(node.next);
+        //reversing when moving out of the recursion calls
+        tail.next=node;
+        tail=node;
+        tail.next=null;
+        //takes extra space
+    }
+    //in place reversal of linked list
+    //https://leetcode.com/problems/reverse-linked-list/description/
+    //the leet code question is almost similar
+    public void reverse(){
+        if(size<2){
+            return;
+        }
+        Node prev= null;
+        Node pres = head;
+        Node Next = pres.next;
+        while(pres!=null){
+            pres.next=prev;
+            prev=pres;
+            pres=Next;
+            if(Next!=null){
+                Next=Next.next;
+            }
+        }
+        head= prev;
+    }
 
     private class Node {
         private int value;

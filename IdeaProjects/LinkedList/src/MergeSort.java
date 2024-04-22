@@ -1,6 +1,6 @@
 public class MergeSort {
     public ListNode sortList(ListNode head){
-        if(head==null || head.next==null){
+        if(head==null || head.next==null){//linked list empty or has only one element
             return head;
         }
         ListNode mid = getMid(head);
@@ -23,17 +23,19 @@ public class MergeSort {
                 tail=tail.next;
             }
         }
+        //different approach to fill the linked list if one of the linked list is empty
         tail.next=(list1!=null)?list1:list2;
-        return dummyHead.next;
+        return dummyHead.next;//returning the actual head
     }
+    //the getMid function here is different from the previous method , this method also breaks the linked list at the mid
     ListNode getMid(ListNode head){
         ListNode midPrev=null;
         while(head!=null && head.next!=null){
-            midPrev=(midPrev==null)?head:midPrev.next;
+            midPrev=(midPrev==null)?head:midPrev.next;//different approach to get the midprev node
             head=head.next.next;
         }
         ListNode mid = midPrev.next;
-        midPrev.next=null;
+        midPrev.next=null;//breaking the linked list at mid
         return mid;
     }
 }
