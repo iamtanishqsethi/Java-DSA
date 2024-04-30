@@ -5,10 +5,10 @@ public class mountainArray {
         while(start<end){
             int mid=start+(end-start)/2;
             if(arr[mid]>arr[mid+1]){
-                //we are asc part of mountain array
+                //we are dsc part of mountain array
                 end=mid;
             }else{
-                //we are in dsc part of mountain array
+                //we are in asc part of mountain array
                 start=mid+1;
             }
         }//will keep running until start and end point at the same value ie the peak value

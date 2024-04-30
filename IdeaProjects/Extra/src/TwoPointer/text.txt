@@ -1,0 +1,4 @@
+Two pointer algorithm
+it has two variations
+1.Slow and fast pointers (mainly used for linked list)
+2.Front and back pointer
