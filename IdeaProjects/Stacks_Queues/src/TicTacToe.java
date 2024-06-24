@@ -1,7 +1,8 @@
 import java.util.Scanner;
-
+//simple 2 player tic-tac-toe game
 public class TicTacToe {
     public static void main(String[] args) {
+        //initialising empty board
         char[][] board=new char[3][3];
         for (int row = 0; row < board.length; row++) {
             for(int col=0;col< board.length;col++){
@@ -22,7 +23,7 @@ public class TicTacToe {
                 if(gameOver){
                     System.out.println("Player "+player+" Has won");
                 }
-                else {
+                else {//switching player after each turn
                     player=(player=='X')?'O':'X';
                 }
             }else {
