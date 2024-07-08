@@ -1,5 +1,6 @@
 import java.util.Arrays;
 //facebook question(leet code medium)
+//https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/
 public class FirstAndLastIndex {
     public static int search (int[] nums,int target,boolean findfirstindex){
         int ans = -1;
