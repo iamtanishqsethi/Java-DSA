@@ -75,7 +75,7 @@ public class SegmentTree {
     }
     private int query(Node node,int queryStartIndex,int queryEndIndex){
         //lies completely inside
-        if(node.startInterval>=queryStartIndex && node.endInterval<=queryEndIndex){
+        if(node.startInterval<=queryStartIndex && node.endInterval>=queryEndIndex){
             return node.data;
         }
         //completely outside
