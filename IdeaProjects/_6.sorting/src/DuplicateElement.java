@@ -1,5 +1,5 @@
 import java.util.Arrays;
-
+//https://leetcode.com/problems/find-the-duplicate-number/
 //https://leetcode.com/problems/contains-duplicate/
 public class DuplicateElement {
     public static void main(String[] args) {
@@ -19,6 +19,25 @@ public class DuplicateElement {
         }
         return ans;
     }
+    public int findDuplicate(int[] nums) {
+        //sort
+        int i=0;
+        while(i<nums.length){
+            int correct=nums[i]-1;
+            if(nums[correct]!=nums[i]){
+                int temp=nums[correct];
+                nums[correct]=nums[i];
+                nums[i]=temp;
+            }else{
+                if(i!=correct){//duplicate found
+                    return nums[i];
+                }
+                i++;
+            }
+        }
+        return -1;
+    }
+
 
 }
 

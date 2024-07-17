@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Cycle_sort {
     /*
     IMPORTANT
@@ -17,5 +19,11 @@ public class Cycle_sort {
         int temp = arr[first];
         arr[first]=arr[last];
         arr[last]=temp;
+    }
+
+    public static void main(String[] args) {
+        int[] arr={3,3,3,3};
+        cycle(arr);
+        System.out.println(Arrays.toString(arr));
     }
 }

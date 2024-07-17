@@ -1,4 +1,5 @@
 public class mountainArraySearch {
+    //https://leetcode.com/problems/find-in-mountain-array/
     public static int findInMountainArray(int target,int[] mountianArr){
         int peak = peakinmountainarray(mountianArr);
         int firsttry=orderAgnosticBS(mountianArr,0,peak,target);
