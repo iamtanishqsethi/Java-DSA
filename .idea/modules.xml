@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/IdeaProjects/BinaryTrees/BinaryTrees.iml" filepath="$PROJECT_DIR$/IdeaProjects/BinaryTrees/BinaryTrees.iml" />
+      <module fileurl="file://$PROJECT_DIR$/IdeaProjects/Extra/Extra.iml" filepath="$PROJECT_DIR$/IdeaProjects/Extra/Extra.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Java-DSA.iml" filepath="$PROJECT_DIR$/.idea/Java-DSA.iml" />
+      <module fileurl="file://$PROJECT_DIR$/IdeaProjects/LargeNumbers/LargeNumbers.iml" filepath="$PROJECT_DIR$/IdeaProjects/LargeNumbers/LargeNumbers.iml" />
+      <module fileurl="file://$PROJECT_DIR$/IdeaProjects/LinkedList/LinkedList.iml" filepath="$PROJECT_DIR$/IdeaProjects/LinkedList/LinkedList.iml" />
+      <module fileurl="file://$PROJECT_DIR$/IdeaProjects/Math/Math.iml" filepath="$PROJECT_DIR$/IdeaProjects/Math/Math.iml" />
+      <module fileurl="file://$PROJECT_DIR$/IdeaProjects/OOP/OOP.iml" filepath="$PROJECT_DIR$/IdeaProjects/OOP/OOP.iml" />
+      <module fileurl="file://$PROJECT_DIR$/IdeaProjects/Stacks_Queues/Stacks_Queues.iml" filepath="$PROJECT_DIR$/IdeaProjects/Stacks_Queues/Stacks_Queues.iml" />
+      <module fileurl="file://$PROJECT_DIR$/IdeaProjects/StringBuffer/StringBuffer.iml" filepath="$PROJECT_DIR$/IdeaProjects/StringBuffer/StringBuffer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/IdeaProjects/_1.first java programs/_1.first java programs.iml" filepath="$PROJECT_DIR$/IdeaProjects/_1.first java programs/_1.first java programs.iml" />
+      <module fileurl="file://$PROJECT_DIR$/IdeaProjects/_2.conditions &amp; loops/_2.conditions &amp; loops.iml" filepath="$PROJECT_DIR$/IdeaProjects/_2.conditions &amp; loops/_2.conditions &amp; loops.iml" />
+      <module fileurl="file://$PROJECT_DIR$/IdeaProjects/_3.functions/_3.functions.iml" filepath="$PROJECT_DIR$/IdeaProjects/_3.functions/_3.functions.iml" />
+      <module fileurl="file://$PROJECT_DIR$/IdeaProjects/_4.arrays/_4.arrays.iml" filepath="$PROJECT_DIR$/IdeaProjects/_4.arrays/_4.arrays.iml" />
+      <module fileurl="file://$PROJECT_DIR$/IdeaProjects/_5.search/_5.search.iml" filepath="$PROJECT_DIR$/IdeaProjects/_5.search/_5.search.iml" />
+      <module fileurl="file://$PROJECT_DIR$/IdeaProjects/_6.sorting/_6.sorting.iml" filepath="$PROJECT_DIR$/IdeaProjects/_6.sorting/_6.sorting.iml" />
+      <module fileurl="file://$PROJECT_DIR$/IdeaProjects/_7.strings/_7.strings.iml" filepath="$PROJECT_DIR$/IdeaProjects/_7.strings/_7.strings.iml" />
+      <module fileurl="file://$PROJECT_DIR$/IdeaProjects/_8.patterns/_8.patterns.iml" filepath="$PROJECT_DIR$/IdeaProjects/_8.patterns/_8.patterns.iml" />
+      <module fileurl="file://$PROJECT_DIR$/IdeaProjects/_9.recursion/_9.recursion.iml" filepath="$PROJECT_DIR$/IdeaProjects/_9.recursion/_9.recursion.iml" />
+    </modules>
+  </component>
+</project>
