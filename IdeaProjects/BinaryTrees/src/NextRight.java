@@ -8,9 +8,9 @@ public class NextRight {
         while(leftMost.left!=null){
             Node current=leftMost;
             while(current!=null){
-                current.left.next=current.right;
+                current.left.next=current.right;//joining the nodes with same parent
                 if(current.next!=null){
-                    current.right.next=current.next.left;
+                    current.right.next=current.next.left;//joining the nodes with diff parent but same level
                 }
                 current=current.next;
             }
