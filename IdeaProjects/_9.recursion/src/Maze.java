@@ -6,7 +6,7 @@ public class Maze {
        public static void main(String[] args) {
 //        System.out.println(pathcount(3,3));
 //        path("",3,3);
-//        System.out.println(pathret("",3,3));
+        System.out.println(pathret("",3,3));
 //        System.out.println(pathretdiagonal("",3,3));
            boolean[][] board = {
                    {true,true,true},
@@ -15,7 +15,7 @@ public class Maze {
            int[][] path = new int[board.length][board[0].length];
 //         pathRestrictions("",board,0,0);
 //         AllPaths("",board,0,0);
-           AllPathsPrint("",board,0,0,path,1);
+//           AllPathsPrint("",board,0,0,path,1);
     }
     /*to get no of paths , we move down and right ,
     * if we reach at the end of the row or col we only have one way to go from there either right or down respectively
