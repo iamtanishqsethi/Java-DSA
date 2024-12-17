@@ -1,12 +1,10 @@
+package TwoPointer;
+
 import java.util.Arrays;
-/*
- in quick sort we will take a pivot (here middle element of the  array),
- and will sort around it ; smaller elements than pivot on left , greater elements on right
- we will only sort the elements that are not already sorted.
- after first call we will sort the left and right half around the pivot using recursion */
-public class Quick_Sort {
+
+public class test {
     public static void main(String[] args) {
-        int[] arr = {5,4,3,2,1};
+        int[] arr = {24,9,29,14,19,27};
         sort(arr,0,arr.length-1);
         System.out.println(Arrays.toString(arr));
     }
@@ -14,28 +12,36 @@ public class Quick_Sort {
         if(low>=high){
             return;
         }
-        int start = low;
+        int start = low +1 ;
         int end = high;
         int mid = start+(end-start)/2;
-        int pivot = nums[mid];
+        int pivot = nums[low];
+        System.out.println("start=" +start);
+        System.out.println("end="+end);
+        System.out.println("pivot="+pivot);
         while(start<=end){
             //If already sorted , will not perform sorting unlike merge sort
-            while(nums[start]<pivot){
+            while(start<=high && nums[start]<pivot){
                 start++;
             }
-            while(nums[end]>pivot){
+            while(end>=low && nums[end]>pivot){
                 end--;
             }
             if(start<=end){
                 int temp=nums[start];
                 nums[start]=nums[end];
                 nums[end]=temp;
-                start++;
-                end--;
+
             }
         }
+        int temp=nums[low];
+        nums[low]=nums[end];
+        nums[end]=temp;
+
+        System.out.println(Arrays.toString(nums));
         //Pivot at correct index, perform sorting for left and right half's
-        sort(nums,low,end);
+
+        sort(nums,low,end-1);
         sort(nums,start,high);
     }
 }
