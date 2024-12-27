@@ -57,5 +57,43 @@ public class RBS {
         }
         return -1;
     }
+    public static int findPivotDup(int [] arr) {
+        int start = 0;
+        int end = arr.length - 1;
+        while (start <= end) {
+            int mid = start + (end - start) / 2;
+            //four cases
+            if (mid < end && arr[mid] > arr[mid + 1]) {
+                return mid;
+            }
+            if (mid > start && arr[mid - 1] > arr[mid]) {
+                return mid - 1;
+            }
+            //the last two cases will change
+            //if elements at start,mid,end are equal skip duplicates from end and start
+            if(arr[mid]==arr[start] && arr[end]==arr[mid]){
+                //skip duplicates
+                //note what if these were the pivots ?
+                //check if start is pivot
+                if(arr[start]>arr[start+1]){
+                    return start;
+                }
+                start++;
+                //check whether end is pivot
+                if(arr[end]<arr[end-1]){
+                    return end-1;
+                }
+                end--;
+            }
+            //left is sorted so pivot must be in right
+            else if(arr[start]<arr[mid]|| (arr[start]==arr[mid] && arr[mid]>arr[end])){
+                start=mid+1;
+            }
+            else{
+                end=mid-1;
+            }
+        }
+        return -1;
+    }
 
 }
