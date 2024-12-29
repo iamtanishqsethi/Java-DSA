@@ -15,9 +15,12 @@ public class CountNegatives {
     //TODO:think about binary search , since array is sorted
     //O(m+n)
     public int countNegatives(int[][] grid){
-        //since array is sorted in decreasing order, so we check from the last of first row
-        //if last element of the first r0w is positive we move down
-        //else we update the count by number of rows - i since its sorted
+        //since array is sorted in decreasing order,both row wise and column wise
+        // So we check from the last of first row
+        //if last element of the first row is positive we move down
+        //else we update the count by number of rows - i since its sorted in decreasing order
+        //so all the elements in that column will be smaller that it
+        //we are kind of checking in a diagonal starting from top right and moving down towards the left
         int count=0;
         int n= grid.length;
         if(n==0) return count;

@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class heightChecker {//
+public class heightChecker {
     //https://leetcode.com/problems/height-checker/
     public static void main(String[] args) {
         int[] heights={5,1,2,3,4};
