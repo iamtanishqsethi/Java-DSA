@@ -24,7 +24,7 @@ public class Subsets {
         }
         return outer;
     }
-
+    //https://leetcode.com/problems/subsets/
     static List<List<Integer>> subsetDuplicate(int[] arr) {
         Arrays.sort(arr);
         List<List<Integer>> outer = new ArrayList<>();
@@ -34,6 +34,7 @@ public class Subsets {
         for (int i = 0; i < arr.length; i++) {
             start = 0;
             // if current and previous element is same, s = e + 1
+            //add the duplicates now to the most recent ones , and skip all the previously created list
             if (i > 0 && arr[i] == arr[i-1]) {
                 start = end + 1;
             }
