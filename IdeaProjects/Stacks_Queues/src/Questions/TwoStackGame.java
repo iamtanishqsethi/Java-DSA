@@ -17,7 +17,7 @@ public class TwoStackGame {
             return count;
         }
         int ansLeft=helper(maxSum, Arrays.copyOfRange(a,1,a.length),b,sum+a[0],count+1);
-        int ansRight=helper(maxSum, b,Arrays.copyOfRange(b,1,b.length),sum+b[0],count+1);
+        int ansRight=helper(maxSum, a,Arrays.copyOfRange(b,1,b.length),sum+b[0],count+1);
 
         return Math.max(ansLeft,ansRight);
     }
